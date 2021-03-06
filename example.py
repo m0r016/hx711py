@@ -2,6 +2,8 @@
 
 import time
 import sys
+import csv
+import datetime
 
 EMULATE_HX711=False
 
@@ -62,8 +64,16 @@ while True:
         # print binary_string + " " + np_arr8_string
         
         # Prints the weight. Comment if you're debbuging the MSB and LSB issue.
-        val = hx.get_weight(5)
-        print(val)
+        
+        val = [0,0]
+        val[0] = datetime.datetime.now()
+        val[1] = hx.get_weight(5)
+        print('now weight ' + str(val[0]) + ',' + ' now time ' + str(val[1]))
+
+        with open('./weight.csv', 'a') as f:
+            writer = csv.writer(f)
+            writer.writerow(val)
+
 
         # To get weight from both channels (if you have load cells hooked up 
         # to both channel A and B), do something like this
@@ -73,7 +83,6 @@ while True:
 
         hx.power_down()
         hx.power_up()
-        time.sleep(0.1)
 
     except (KeyboardInterrupt, SystemExit):
         cleanAndExit()
