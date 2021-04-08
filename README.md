@@ -35,3 +35,4 @@ sudo python setup.py install
 sudo python example.py
 ```
 をする。
+`hx711py`下に`weight.csv`が生成されたら完了。
