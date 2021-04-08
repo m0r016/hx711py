@@ -20,13 +20,15 @@ sudo python setup.py install
 
 4. 配線し、example.pyを走らせる
 配線の位置は↓
-線の色 - ラズパイ側
-VDD - 2(5v)
-DAT - 29(GPIO5)
-CLK - 31(GPIO6)
-GND - 6(GND)
-INNB - none
-INPB - none
+
+|線の色|ラズパイ側|
+|---:|---:|
+|VDD|2(5v)|
+|DAT|29(GPIO5)|
+|CLK|31(GPIO6)|
+|GND|6(GND)|
+|INNB|none|
+|INPB|none|
 
 正しく配置できたら
 ```
